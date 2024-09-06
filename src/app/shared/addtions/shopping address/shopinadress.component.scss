@@ -1,0 +1,28 @@
+.form-label{
+    color: rgb(27, 195, 27);
+}
+.form-control{
+    border: solid 2px  rgb(27, 195, 27);
+    
+}
+.btn-secondary{
+    border: none;
+    background-color:rgb(27, 195, 27) ;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.btn-primary {
+    background-color: #ffffff;
+    color: rgb(27, 195, 27) ;
+    border: solid rgb(27, 195, 27) 2px;
+    transition: all;
+}
+
+.btn-primary:hover {
+
+    background-color:rgb(27, 195, 27) ;
+    color: #ffffff;
+}
+.dropdown-menu{
+    border: none;
+}

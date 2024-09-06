@@ -1,0 +1,36 @@
+       <section class="container m-5 mb-2 fs-5 ">
+        <h2> Shopping Address : </h2>
+
+        <form class="w-75 mx-auto" [formGroup]="shipingaddForm" (ngSubmit)="[submitOnlinePay() , submitCashePay() ]" > 
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label "> details </label>
+                <input type="text" class="form-control w-100 shadow-none" id="formGroupExampleInput" formControlName="details" >
+              </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label "> city </label>
+                <input type="text" class="form-control w-100 shadow-none" id="formGroupExampleInput" formControlName="city">
+              </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label "> phone </label>
+                <input type="text" class="form-control w-100 shadow-none" id="formGroupExampleInput" formControlName="phone">
+              </div>
+
+
+             <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle d-block mx-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Payment dropdown
+  </button>
+  <ul class="dropdown-menu p-0  ms-2">
+    <li class="mb-2"> <button class="btn btn-primary w-100 onlone" (click)="submitOnlinePay()" > online </button> </li>
+    <li> <button class="btn btn-primary w-100 cash" (click)="submitCashePay()"> cash </button> </li>
+    
+  </ul>
+     </div>
+              
+
+
+
+
+        </form>
+       </section>
+       

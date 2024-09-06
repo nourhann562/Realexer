@@ -1,0 +1,49 @@
+@if(lodingScreen){
+    <div class="loding-screen d-flex justify-content-center align-items-center ">
+    
+        <i class=" fa-spin fa-solid fa-fan spin fs-2 "></i>
+    
+    </div>
+
+}
+@else {
+    @if (viewdet) {
+        <section class="container p-3 mt-5 mx-auto my-4">
+
+            <div class="row ">
+               
+                    <div class="col-md-4">
+                        <img [src]="viewdet.imageCover" class="w-100" alt="">
+                    </div>
+                    <div class="col-md-8 p-2">
+                    <h4> {{viewdet.title}}</h4>
+                            <p>  {{viewdet.description}} </p>
+                               
+                            <p class="spin"> {{viewdet.category.name}} </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                    
+                                <span>{{viewdet.price}}  EGP</span>
+                
+                                <div class="p-2">
+                                    <span>  <i class="fas fa-star star-color "> </i></span>
+                                    <span class="text-muted"> {{viewdet.ratingsAverage}} </span>
+                                </div>
+
+                                <span>
+                                    <i class="fa-regular fa-heart fs-3 cur" (click)="addToFav(viewdet._id)"></i>
+                                </span>
+                 
+                            </div>
+                
+                            <button (click)="AddDCaertByBtn(viewdet._id)" class="btn btn-primary text-white w-100 cart-btn"> Add To Cart </button>
+                        
+                
+                    </div>
+    
+             
+            </div>
+        </section>
+        
+    }
+}
+

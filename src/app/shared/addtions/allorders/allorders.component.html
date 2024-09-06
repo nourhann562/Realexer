@@ -1,0 +1,53 @@
+
+@if(lodingScreen){
+  <div class="loding-screen d-flex justify-content-center align-items-center mt-5 ">
+  
+      <i class=" fa-spin fa-solid fa-fan spin fs-2 "></i>
+  
+  </div>
+
+}@else {
+     
+  <section class="container p-3 shadow-lg">
+
+    <div class="table-responsive mt-5">
+        <table class="table">
+          <thead>
+            <tr class="text-center table-primary">
+                <td class="fw-bold">id</td>
+                <td class="fw-bold">isDelverid</td>
+                <td class="fw-bold"> isPaid</td>
+                <td class="fw-bold">Order price</td>
+                <td class="fw-bold">order date</td>
+                <td class="fw-bold"> PaymentBy </td>
+            </tr>
+
+          </thead>
+          <tbody>
+            @if (OrderLoops)
+             {
+                @for (item of OrderLoops; track $index) {
+                       
+                    <tr class="text-center table-light">
+                        <td>{{ item.id }}</td>
+                        <td>{{item.isDelivered}}</td>
+                        <td> {{item.isPaid}}</td>
+                        <td> {{item.totalOrderPrice}} <span class="text-danger">EGP</span> </td>
+                        <td>{{item.createdAt}}</td>
+                        <td>{{item.paymentMethodType}}</td>
+                        
+                    </tr>
+                }
+                 
+                
+            }
+           
+
+          </tbody>
+        </table>
+      </div>
+
+</section>
+}
+
+

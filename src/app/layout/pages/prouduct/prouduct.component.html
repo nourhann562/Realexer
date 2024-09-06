@@ -1,0 +1,72 @@
+
+
+
+
+    @if(lodingScreen){
+        <div class="loding-screen d-flex justify-content-center align-items-center mt-5 ">
+        
+            <i class=" fa-spin fa-solid fa-fan spin fs-2 "></i>
+        
+        </div>
+    
+    }
+    @else {
+           
+        <section>
+            <div class="container mt-4">
+    
+                <div class="w-100 mx-auto my-5 d-flex justify-content-center align-items-center serch p-3">
+                    <input [(ngModel)]="userWord" type="text" class="form-control w-75" placeholder=" search by tittle.. "> 
+    
+                </div>
+    
+                <div class="row">
+                    @for (proud of allProud |serchPipe : userWord ; track $index) {
+        
+                        <div class="col-md-2 g-3 ">
+                            <div class=" p-3  items">
+                                <div class="cur-pointer prouduct " [routerLink]="['/prouductdetials', proud._id]">
+                                    <img [src]="proud.imageCover" class="w-100" alt="">
+                                <h6 class="main-color">
+                                    {{proud.category.name}}
+                                </h6>
+                                <h5 class="fs-5">
+                                    {{proud.title.split(" " ,2).join(" ")}}
+                                </h5>
+            
+                                <div class="d-flex justify-content-between align-items-center">
+            
+                                    <span> {{proud.price}} EGP</span>        
+                                    <div class="p-2">
+                                        <span> <i class="fas fa-star star-color "> </i></span>
+                                        <span class="text-muted"> {{proud.ratingsAverage}} </span>
+                                    </div>
+                
+                                </div>
+                                </div>
+                               <div class="w-100 text-center"><i class="cur fs-4 fa-regular fa-heart"
+                                 (click)="addToFav(proud._id)"></i></div> 
+                                <button class="btn btn-primary text-white w-100 cart-btn" 
+                                (click)="AddToCart(proud._id)"> Add To Cart </button>
+                                
+                                
+            
+                            </div>
+                           
+            
+            
+                        </div>
+                    }
+                </div>
+        
+            </div>
+        </section>
+    }
+
+
+
+
+
+  
+
+

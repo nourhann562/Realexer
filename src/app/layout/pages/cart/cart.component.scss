@@ -1,0 +1,35 @@
+    .cur{
+        cursor: pointer;
+    }
+.color{
+    color: rgb(27, 195, 27);
+}
+.row-me{
+    background-color: rgb(233, 227, 227);
+    border-bottom:rgb(27, 195, 27) 1px solide ;
+   ;
+
+}
+
+.row-me:hover{
+    border:rgb(27, 195, 27) solid 2px ;
+    box-shadow: inset;
+}
+.btn-bord{
+    border:rgb(27, 195, 27) solid 1px ;
+}
+.botn{
+    
+    background-color: rgb(27, 195, 27) !important;
+    border: rgb(27, 195, 27) !important ;
+    transition: all 1s;
+
+}
+.botn-clear{
+    background-color: #ffff;
+    border: red 1px solid ;
+    color: red !important;
+}
+.fa-trash {
+    color: red;
+}

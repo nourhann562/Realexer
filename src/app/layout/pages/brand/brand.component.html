@@ -1,0 +1,24 @@
+
+<section class="mt-5 container section shadow-lg">
+    <div class="row p-3 ">
+        @for (item of  brandList; track $index) {<div class="col-md-3 bran-border rounded-2 gy-2 shadow-sm">
+            <div class="brands text-center mt-1 ">
+                <img [src]="item.image" class="w-100 rounded-2" alt="">
+
+                       <h2 class="p-3 mt-2 name-color">  {{item.name}}  </h2>
+
+            </div>
+
+        </div>}
+        
+    </div>
+</section>
+            
+
+            
+    
+           
+
+   
+
+

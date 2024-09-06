@@ -1,0 +1,191 @@
+@if (emailflag) {
+    <div class="container">
+        <h2 class="mt-5 mb-2  fs-5"> Email Confirm :  </h2>
+    
+        
+    
+        <div class="row">
+            <div class="col-md-7 ">
+                @if (errMsg) {
+                    <div class="bg-danger-subtle p-1 rounded-2 p-0 m-0 ">
+                        <p>
+                           <span><i class="fa fa-warning "></i></span> {{errMsg}}
+                        </p>
+            
+                    </div>
+                }
+               
+                <form [formGroup]="forgetform" class="p-3 " (ngSubmit)="submitForgetForm()" >
+    
+                    <label for=""> email : </label>
+                              <input type="email" class="form-control" formControlName="email">
+                              @if (forgetform.get('email')?.errors && forgetform.get('email')?.touched) {
+                                <div class="m-0 p-1 bg-danger-subtle  rounded-2  ">
+                                    @if ( forgetform.get('email')?.errors?.['required']) {
+                                        <p class="">emil is requirerd</p>
+                                    }
+                                    @else if (forgetform.get('email')?.errors?.['email']) {
+                                        <p class="">emil not valide </p>
+                                    }
+                                    
+                                    
+                               </div>
+                              }
+                              
+    
+                                <button [disabled]="forgetform.invalid" class="btn btn-primary text-white mt-3 d-block ms-auto forget-btn">
+                                    @if (spinner) {
+                                        <i class="fa fa-spin fa-spinner"></i>
+                                       
+                                    }
+                                    @else {
+                                        <span> Send email  </span>
+                                    }
+                                </button>
+            
+                </form>
+    
+            </div>
+    
+        </div>
+    
+        
+    
+    </div>
+}
+<!--================================= verifiy code  =========================================================-->
+
+
+
+@if (codeflag) {
+    <div class="container">
+        <h2>
+            Verify Reset Code :
+        </h2>
+       
+    
+        <div class="row">
+            <div class="col-md-7">
+                @if (errMsgg) {
+                    <div class="p-1 m-0 bg-danger-subtle ">
+                        <p> <span><i class="fa fa-warning"></i></span> {{errMsgg}} </p>
+            
+                    </div>
+                }
+    
+                <form [formGroup]="verifyform" (ngSubmit)="submitVeerify()" class="p-4">
+                            
+                    <label for="">
+                        Reset Code : 
+                    </label>
+         <input type="text" class="form-control w-100 " formControlName="resetCode">
+         @if (verifyform.get('resetCode')?.errors && verifyform.get('resetCode')?.touched) {
+    
+            <div class="p-1 m-0 bg-danger-subtle rounded-2">
+                @if (verifyform.get('resetCode')?.errors?.['required']) {
+                    <p> <span><i class="fa fa-face-angry"></i></span> resetCode is required </p>
+                }
+                @else if (verifyform.get('resetCode')?.errors?.['pattern']) {
+                    <p> <span><i class="fa fa-face-angry"></i></span> enter valide code  </p>
+                }
+               
+                
+    
+            </div>
+         }
+    
+    
+    
+    
+            <button [disabled]="verifyform.invalid" class="btn btn-primary text-white mt-3 d-block ms-auto forget-btn">
+                                           @if (spinnerr) {
+                                                <i class="fa fa-spin fa-spinner"></i>
+                                               
+                                            }
+                                            @else {
+                                                <span> Send Code  </span>
+                                            }
+            </button>
+    
+    
+    
+                </form>
+                
+            </div>
+    
+        </div>
+    
+    </div>
+}
+
+<!--================================= reset password   =========================================================-->
+@if (newPassFlag) {
+    <div class="container">
+        <h2 class="m-5 mb-2"> new Password :  </h2>
+    
+        
+    
+        <div class="row">
+            <div class="col-md-7 ">
+                @if (erreMsgg) {
+                    <div class="bg-danger-subtle p-1 rounded-2 p-0 m-0 ">
+                        <p>
+                           <span><i class="fa fa-warning "></i></span> {{erreMsgg}}
+                        </p>
+            
+                    </div>
+                }
+               
+                <form [formGroup]="newPassForm" class="p-3 " (ngSubmit)="submitNewPass()" >
+    
+                    <label for=""> email : </label>
+                              <input type="email" class="form-control" formControlName="email">
+                              @if (newPassForm.get('email')?.errors && newPassForm.get('email')?.touched) {
+                                <div class="m-0 p-1 bg-danger-subtle  rounded-2  ">
+                                    @if ( newPassForm.get('email')?.errors?.['required']) {
+                                        <p class="">emil is requirerd</p>
+                                    }
+                                    @else if (newPassForm.get('email')?.errors?.['email']) {
+                                        <p class="">emil not valide </p>
+                                    }
+                                    
+                                    
+                               </div>
+                              }
+                    <label for=""> newPassword : </label>
+                              <input type="newPassword" class="form-control" formControlName="newPassword">
+                              @if (newPassForm.get('newPassword')?.errors && newPassForm.get('newPassword')?.touched) {
+                                <div class="m-0 p-1 bg-danger-subtle  rounded-2  ">
+                                    @if ( newPassForm.get('newPassword')?.errors?.['required']) {
+                                        <p class="">email is requirerd</p>
+                                    }
+                                    @else if (newPassForm.get('newPassword')?.errors?.['pattern']) {
+                                        <p class="">enter vlaide password </p>
+                                    }
+                                    
+                                    
+                               </div>
+                              }
+                              
+    
+                                <button [disabled]="newPassForm.invalid" class="btn btn-primary text-white mt-3 d-block ms-auto forget-btn">
+                                    @if (isspinnerr) {
+                                        <i class="fa fa-spin fa-spinner"></i>
+                                       
+                                    }
+                                    @else {
+                                        <span> update Passwoed </span>
+                                    }
+                                </button>
+            
+                </form>
+    
+            </div>
+    
+        </div>
+    
+        
+    
+    </div>
+}
+

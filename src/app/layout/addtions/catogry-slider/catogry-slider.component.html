@@ -1,0 +1,34 @@
+
+
+@if (lodingScr) {
+    <div class="loding-screen d-flex justify-content-center align-items-center ">
+    
+        <i class=" fa-spin fa-solid fa-fan spin fs-2 "></i>
+    
+    </div>
+}
+@else {
+
+    <div class="container">
+        <h3 class="p-1 fs-5">
+            Shop Popular Category
+        </h3>
+        <owl-carousel-o [options]="customOptions">
+           
+            @for (item of showSliderOfCatogry; track $index) {
+                 
+                <ng-template carouselSlide [id]="item._id">
+                    <img [src]="item.image" [alt]="item.name" [title]="item.name">
+                  </ng-template>
+               
+            }
+              
+        
+          </owl-carousel-o>
+        
+    </div>
+    
+   
+}
+
+
